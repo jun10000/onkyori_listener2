@@ -1,0 +1,19 @@
+#
+# Author: jun10000 (https://github.com/jun10000)
+#
+
+# Please copy to /usr/lib/systemd/system/
+
+[Unit]
+Description=Onkyo RI Listener
+After=mariadb.service
+
+[Service]
+ExecStart=/var/project/onkyori_listener/index.py
+Nice=-20
+Restart=always
+Type=forking
+PIDFile=/var/run/OnkyoRIListener.pid
+
+[Install]
+WantedBy=multi-user.target
