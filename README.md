@@ -22,6 +22,7 @@ This daemon needs [onkyori_common] module to operate.
     1. Login to Raspberry Pi.
     1. Create directory: '/var/project/onkyori_listener/'
     1. Place this repository files to '/var/project/onkyori_listener/'.
+    1. Add execute permission to 'index.py' and 'cython_setup.py'.
 1. Compile Cython scripts
     1. Move to '/var/project/onkyori_listener/'.
     1. Execute the following command to compile Cython scripts.  
