@@ -11,13 +11,18 @@ This daemon needs [onkyori_common] module to operate.
 - Requirements of [onkyori_common]
 - Raspberry Pi 3 Type B
     - Physical parts:
-        - (I'm writing this.)
+        - Resistance
+            - 2kΩ x1
+            - 1kΩ x1
+        - Audio cable (3.5mm Mono)
     - Python packages:
         - Cython 0.28.1
 
 ## Install
-1. Create electronic circuit
-    1. (I'm writing this.)
+1. Create electronic circuit  
+    ![Electronic curcuit diagram](.readme/circuit.svg)
+    - The Onkyo RI equipment's "RI Remote Control" jack uses the audio cable plug.
+    - Connect the Onkyo RI equipment ground and the Raspberry Pi ground.
 1. Place this repository files into Raspberry Pi
     1. Login to Raspberry Pi.
     1. Create directory: '/var/project/onkyori_listener/'
