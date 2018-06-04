@@ -1,8 +1,11 @@
 [onkyori_common]: https://github.com/jun10000/onkyori_common
 
-# onkyori_listener
+# onkyori_listener2
 onkyori_*** are modules what enable cooperation with the Onkyo RI system.
 
+Now, I'm creating this.
+
+<!--
 ## Description
 The onkyori_listener is the daemon what acquires Onkyo RI signal and registers it to database.  
 This daemon needs [onkyori_common] module to operate.
@@ -46,3 +49,4 @@ This daemon needs [onkyori_common] module to operate.
 
 ## Author
 [jun10000](https://github.com/jun10000)
+-->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="Raspberry Pi - onkyori">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
+<dataSource name="onkyori@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.9">
     <root id="1">
       <ServerVersion>10.1.23</ServerVersion>
       <RdbmsFlavour>MariaDB</RdbmsFlavour>

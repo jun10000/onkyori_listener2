@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Raspberry Pi - onkyori" uuid="452b92fa-f4a9-47d4-b23f-1095f8c78899">
+    <data-source source="LOCAL" name="onkyori@localhost" uuid="14aba529-a639-4854-a233-49cdcf902e45">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
