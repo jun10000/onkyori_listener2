@@ -5,15 +5,14 @@
 # Please copy to /usr/lib/systemd/system/
 
 [Unit]
-Description=Onkyo RI Listener
+Description=Onkyo RI Listener 2
 After=mariadb.service
 
 [Service]
-ExecStart=/var/project/onkyori_listener/index.py
-Nice=-20
+ExecStart=/var/project/onkyori_listener2/index.py
 Restart=always
 Type=forking
-PIDFile=/var/run/OnkyoRIListener.pid
+PIDFile=/var/run/OnkyoRIListener2.pid
 
 [Install]
 WantedBy=multi-user.target
