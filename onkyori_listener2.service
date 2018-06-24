@@ -10,6 +10,7 @@ After=mariadb.service
 
 [Service]
 ExecStart=/var/project/onkyori_listener2/index.py
+Nice=-20
 Restart=always
 Type=forking
 PIDFile=/var/run/OnkyoRIListener2.pid
