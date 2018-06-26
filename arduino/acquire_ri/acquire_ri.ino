@@ -12,10 +12,10 @@
 #define BUFFERLENGTH_HEADER 3
 // Onkyo RI Signal Footer's BitLength <Original: 3>
 #define BUFFERLENGTH_FOOTER 3
-// Loop Interval of Acquiring Onkyo RI Signals <Original: 1000μs>
+// Loop Interval of Acquiring Onkyo RI Signals <Original: 1000>
 #define LOOPINTERVAL_US 1000
-// The value of Adjusting LOOPINTERVAL_US <Original: 0μs>
-#define LOOPINTERVALOFFSET_US 5
+// The value of Adjusting LOOPINTERVAL_US <Original: 0>
+#define LOOPINTERVALOFFSET_US 7
 
 const bool BUFFER_HEADER[] = {1, 1, 1};
 const bool BUFFER_FOOTER[] = {0, 0, 0};
@@ -56,9 +56,9 @@ struct RIBuffer
     }
 
   public:
-    void add(bool value) { _buf[_cursor] = value; _cursor++; }
-    void clear() { _cursor = 0; }
     int getLength() { return _cursor; }
+    void add(bool value) { _buf[_cursor++] = value; }
+    void clear() { _cursor = 0; }
 
     RIBufferStatus getStatus()
     {
@@ -77,16 +77,15 @@ struct RIBuffer
       }
     }
 
-    String dump()
+    void dumpToSerial()
     {
-      String ret = "";
+      char result[BUFFERLENGTH];
       for (int i = 0; i < _cursor; i++)
       {
-        char b = _buf[i] ? '1' : '0';
-        ret.concat(b);
+        result[i] = _buf[i] ? '1' : '0';
       }
-
-      return ret;
+      result[_cursor] = '\n';
+      Serial.write(result, _cursor + 1);
     }
 };
 
@@ -100,7 +99,7 @@ void callback_TimeElapsed()
     case RIBufferStatus_Storing:
       break;
     case RIBufferStatus_Complete:
-      Serial.println(buf.dump());
+      buf.dumpToSerial();
       buf.clear();
       break;
     case RIBufferStatus_Wrong:
@@ -117,7 +116,4 @@ void setup()
   Timer1.attachInterrupt(callback_TimeElapsed);
 }
 
-void loop()
-{
-  
-}
+void loop(){}
