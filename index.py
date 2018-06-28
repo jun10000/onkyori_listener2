@@ -9,14 +9,12 @@ import sys
 
 from arduinoserial import ArduinoSerial
 from ridatabase import RIDatabase
-from risignal import RISignal
 
 
 def main():
     with RIDatabase() as db, ArduinoSerial() as ser:
         while True:
-            inputbits = ser.readbits()
-            result = RISignal.search_name(inputbits)
+            result = ser.readsignal()
             db.insert_signal(result)
 
 

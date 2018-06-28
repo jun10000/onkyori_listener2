@@ -6,6 +6,8 @@
 
 import serial
 
+import settings
+
 class ArduinoSerial:
     __ser = None
 
@@ -18,6 +20,13 @@ class ArduinoSerial:
 
     def readbits(self):
         bits = self.__ser.readline().decode().rstrip()
+        return bits
+
+    def readsignal(self):
+        bits = self.readbits()
+        for (name, signal) in settings.common['RISignals'].items():
+            if signal == bits:
+                return name
         return bits
 
     def __enter__(self):
