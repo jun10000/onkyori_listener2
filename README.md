@@ -6,7 +6,7 @@ onkyori_*** are modules what enable cooperation with the Onkyo RI system.
 ## Description
 'Onkyori_listener2' acquires Onkyo RI signal and registers it to database.  
 This module contains the Raspberry Pi daemon and the Arduino program.  
-This module needs [onkyori_common] module (Ver. 0.3 or above) to operate.
+This module needs [onkyori_common] module (Ver. 0.4 or above) to operate.
 
 ## Requirement
 - Requirements of [onkyori_common]
